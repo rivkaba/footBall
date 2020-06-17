@@ -35,8 +35,11 @@ public class Login extends AppCompatActivity {
         switchU.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
+                if (isChecked) {
                     switchU.setText("Manegment");
+                  // R.string.user;
+                }
+
                 else
                     switchU.setText("User");
 
