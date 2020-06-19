@@ -2,6 +2,7 @@ package rivkaba.com;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.widget.Toast.*;
 
 public class Login extends AppCompatActivity {
 
@@ -21,17 +25,23 @@ public class Login extends AppCompatActivity {
     private TextView texMustName;
     private TextView texMustPassWord;
     private EditText edtPassWord;
+    private Button forgetN;
+    private Button forgetP;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        context=this;
         switchU = (Switch) findViewById(R.id.switchUM);
         passNameBtn = (Button) findViewById(R.id.passName);
         edtName = (EditText) findViewById(R.id.editUserName);
         edtPassWord= (EditText) findViewById(R.id.editPassWord);
         texMustPassWord = (TextView) findViewById(R.id.mustFileP);
         texMustName = (TextView) findViewById(R.id.mustFileU);
+        forgetN=(Button) findViewById(R.id.forgetn);
+        forgetP=(Button) findViewById(R.id.forgrtp);
         switchU.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -66,15 +76,30 @@ public class Login extends AppCompatActivity {
                         editorName.putString("name_key", myName);
                         editorName.apply();
                         Intent intent = new Intent(Login.this, Home.class);
+                        intent.putExtra("user",switchU.getText());
                         startActivity(intent);
                    }
         }
 
         });
-    }
+        forgetN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"ברצינות????", Toast.LENGTH_LONG).show();
 
+            }
 
+        });
 
-    }
+                forgetP.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(context,"אוללה מה אתה אומר????", Toast.LENGTH_LONG).show();
+                    }
+
+                });
+                    }
+            }
+
 
 

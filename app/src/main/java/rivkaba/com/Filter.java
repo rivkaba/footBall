@@ -20,15 +20,20 @@ public class Filter extends AppCompatActivity {
  private CheckBox checkBoxAll;
  private Switch switchUser;
  private TextView textViewTrainingType;
+ private String user;
+ private TextView textViewUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
+        user=getIntent().getExtras().getString("user");
         textViewTrainingType=(TextView)findViewById(R.id.textViewTrainingType);
         switchUser=(Switch) findViewById(R.id.switchUM);
         checkBoxAll=(CheckBox) findViewById(R.id.checkBoxAll);
         TableLayoutCh = (TableLayout) findViewById(R.id.tableLayoutCh);
+        textViewUser=(TextView) findViewById(R.id.textViewUser);
+        textViewUser.setText(user);
       //  switchUser.setText("yyyyy");
        // if(switchUser.isChecked())
         //    textViewTrainingType.setText("ples press on the type of the add vidio");

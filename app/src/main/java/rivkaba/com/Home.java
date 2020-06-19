@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
@@ -18,29 +19,25 @@ public class Home extends AppCompatActivity {
     private ImageButton calenderBtn;
     private ImageButton filterBtn;
     private ImageButton profileBtn;
-
-
-
     private ListView listView;
     private String user;
+    private TextView textViewUser;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        user=getIntent().getExtras().getString("user");
         setContentView(R.layout.activity_home);
         listView = findViewById(R.id.vidieoList);
-        user="@strings/User";
-
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.filterBtn);
         calenderBtn = findViewById(R.id.imageButtonCalendar);
-
-
+        textViewUser=(TextView) findViewById(R.id.textViewUser);
+        textViewUser.setText(user);
         calenderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 Intent intent = new Intent(Home.this, Calendar.class);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });
@@ -50,6 +47,7 @@ public class Home extends AppCompatActivity {
 
 
                 Intent intent = new Intent(Home.this, Filter.class);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });
