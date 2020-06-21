@@ -50,7 +50,7 @@
                 android:backgroundTint="#FFFFFF"
                 style="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
                 android:hint="UserName"
                 android:textSize="25dp"/>
@@ -73,7 +73,7 @@
                 android:ems="10"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
                 />
 

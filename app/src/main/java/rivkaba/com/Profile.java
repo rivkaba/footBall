@@ -38,7 +38,7 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
                 if(name.getText().toString().equals("")) {
                     texMustName.setVisibility(View.VISIBLE);
-                    //name.setOutlineSpotShadowColor(getResources().getColor(R.color.colorPrimaryDark));
+                    name.setHintTextColor(getResources().getColor(R.color.colorEror));
                 }
                 else
                 if(texMustName.getVisibility()== View.VISIBLE &&!name.getText().toString().equals(""))

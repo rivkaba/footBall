@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background">
+        android:background="@color/colorBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <TextView
                 android:id="@+id/NameL"
@@ -50,23 +50,24 @@
                 android:backgroundTint="#FFFFFF"
                 android:hint="Name"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
                 android:textSize="25dp" />
 
         </LinearLayout>
+
             <TextView
-            android:id="@+id/mustFileN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="the file is must"
-                android:textColor="#F44336"
-            android:visibility="invisible" />
+                android:id="@+id/mustFileN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="the file is must"
+                android:textColor="@color/colorEror"
+                android:visibility="invisible" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <TextView
                 android:id="@+id/FamilyNameL"
@@ -88,7 +89,7 @@
                 android:backgroundTint="#FFFFFF"
                 android:hint="Family name"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
                 android:textSize="25dp" />
         </LinearLayout>
@@ -100,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <TextView
                 android:id="@+id/EmailL"
@@ -137,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <TextView
                 android:id="@+id/UserNameL"
@@ -159,7 +160,7 @@
                 android:backgroundTint="#FFFFFF"
                 android:hint="User name"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
                 android:textSize="25dp" />
         </LinearLayout>
@@ -174,7 +175,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <TextView
                 android:id="@+id/PassWordL"
@@ -210,7 +211,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <TextView
                 android:id="@+id/PositionL"
@@ -232,7 +233,7 @@
                 android:backgroundTint="#FFFFFF"
                 android:hint="Position"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
                 android:textSize="25dp" />
         </LinearLayout>
@@ -240,7 +241,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/background"
+            android:background="@color/colorBackground"
             android:orientation="horizontal">
 
             <TextView
@@ -264,7 +265,7 @@
                 android:backgroundTint="#FFFFFF"
                 android:hint="Coantry"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
                 android:textSize="25dp" />
         </LinearLayout>
@@ -273,13 +274,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/background">
+            android:background="@color/colorBackground">
 
             <LinearLayout
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/background">
+                android:background="@color/colorBackground">
 
             </LinearLayout>
 
@@ -298,14 +299,14 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/background"></LinearLayout>
+                android:background="@color/colorBackground"></LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:background="@color/background"
+            android:background="@color/colorBackground"
             android:orientation="vertical"></LinearLayout>
         </LinearLayout>
     </ScrollView>

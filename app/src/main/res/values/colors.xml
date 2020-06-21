@@ -6,5 +6,6 @@
 
     <color name="colorAccent">#213B23</color>
 
-    <color name="background">#CEF1C0</color>
+    <color name="colorBackground">#CEF1C0</color>
+    <color name="colorEror">#F81807</color>
 </resources>
