@@ -60,13 +60,17 @@ public class Login extends AppCompatActivity {
         passNameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtName.getText().toString().equals(""))
+                if(edtName.getText().toString().equals("")) {
                     texMustName.setVisibility(View.VISIBLE);
+                    edtName.setHintTextColor(getResources().getColor(R.color.colorEror));
+                }
                 else
                 if(texMustName.getVisibility()== View.VISIBLE &&!edtName.getText().toString().equals(""))
                     texMustName.setVisibility(View.INVISIBLE);
-               if(edtPassWord.getText().toString().equals(""))
+               if(edtPassWord.getText().toString().equals("")) {
                    texMustPassWord.setVisibility(View.VISIBLE);
+                   edtPassWord.setHintTextColor(getResources().getColor(R.color.colorEror));
+               }
                else
                if(texMustPassWord.getVisibility()== View.VISIBLE &&!edtPassWord.getText().toString().equals(""))
                    texMustPassWord.setVisibility(View.INVISIBLE);
