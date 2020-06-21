@@ -98,6 +98,32 @@
 
         </TableLayout>
 
+        <RadioButton
+            android:id="@+id/radioButtonShowCalender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show the calender" />
+
+        <ScrollView
+            android:id="@+id/ScrollViewCalender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+            </LinearLayout>
+        </ScrollView>
+
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
