@@ -43,18 +43,26 @@ public class Profile extends AppCompatActivity {
                 else
                 if(texMustName.getVisibility()== View.VISIBLE &&!name.getText().toString().equals(""))
                     texMustName.setVisibility(View.INVISIBLE);
-                if(email.getText().toString().equals(""))
+                if(email.getText().toString().equals("")) {
                     texMustEmail.setVisibility(View.VISIBLE);
+                    email.setHintTextColor(getResources().getColor(R.color.colorEror));
+                }
                 else
                 if(texMustEmail.getVisibility()== View.VISIBLE &&!email.getText().toString().equals(""))
                     texMustEmail.setVisibility(View.INVISIBLE);
-                if(userName.getText().toString().equals(""))
+                if(userName.getText().toString().equals("")) {
                     texMustUserName.setVisibility(View.VISIBLE);
+                    userName.setHintTextColor(getResources().getColor(R.color.colorEror));
+
+                }
                 else
                 if(texMustUserName.getVisibility()== View.VISIBLE &&!userName.getText().toString().equals(""))
                     texMustUserName.setVisibility(View.INVISIBLE);
-                if(passWord.getText().toString().equals(""))
+                if(passWord.getText().toString().equals("")) {
                     texMustPassWord.setVisibility(View.VISIBLE);
+                    passWord.setHintTextColor(getResources().getColor(R.color.colorEror));
+
+                }
                 else
                 if(texMustPassWord.getVisibility()== View.VISIBLE &&!passWord.getText().toString().equals(""))
                     texMustPassWord.setVisibility(View.INVISIBLE);

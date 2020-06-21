@@ -197,7 +197,7 @@
                 android:inputType="textPassword"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/background"
+                android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary" />
         </LinearLayout>
             <TextView
