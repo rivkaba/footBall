@@ -2,11 +2,13 @@ package rivkaba.com;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Profile extends AppCompatActivity {
     private TextView texMustName;
@@ -18,11 +20,13 @@ public class Profile extends AppCompatActivity {
     private EditText email;
     private EditText userName;
     private EditText passWord;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        context=this;
         save = (Button) findViewById(R.id.Save);
         texMustName = (TextView) findViewById(R.id.mustFileN);
         texMustEmail = (TextView) findViewById(R.id.mustFileE);
@@ -42,14 +46,14 @@ public class Profile extends AppCompatActivity {
                 }
                 else
                 if(texMustName.getVisibility()== View.VISIBLE &&!name.getText().toString().equals(""))
-                    texMustName.setVisibility(View.INVISIBLE);
+                    texMustName.setVisibility(View.GONE);
                 if(email.getText().toString().equals("")) {
                     texMustEmail.setVisibility(View.VISIBLE);
                     email.setHintTextColor(getResources().getColor(R.color.colorEror));
                 }
                 else
                 if(texMustEmail.getVisibility()== View.VISIBLE &&!email.getText().toString().equals(""))
-                    texMustEmail.setVisibility(View.INVISIBLE);
+                    texMustEmail.setVisibility(View.GONE);
                 if(userName.getText().toString().equals("")) {
                     texMustUserName.setVisibility(View.VISIBLE);
                     userName.setHintTextColor(getResources().getColor(R.color.colorEror));
@@ -57,7 +61,7 @@ public class Profile extends AppCompatActivity {
                 }
                 else
                 if(texMustUserName.getVisibility()== View.VISIBLE &&!userName.getText().toString().equals(""))
-                    texMustUserName.setVisibility(View.INVISIBLE);
+                    texMustUserName.setVisibility(View.GONE);
                 if(passWord.getText().toString().equals("")) {
                     texMustPassWord.setVisibility(View.VISIBLE);
                     passWord.setHintTextColor(getResources().getColor(R.color.colorEror));
@@ -65,8 +69,9 @@ public class Profile extends AppCompatActivity {
                 }
                 else
                 if(texMustPassWord.getVisibility()== View.VISIBLE &&!passWord.getText().toString().equals(""))
-                    texMustPassWord.setVisibility(View.INVISIBLE);
-
+                    texMustPassWord.setVisibility(View.GONE);
+                if(!name.getText().toString().equals("")&&!email.getText().toString().equals("")&&!userName.getText().toString().equals("")&&!passWord.getText().toString().equals(""))
+                    Toast.makeText(context,"תודה", Toast.LENGTH_LONG).show();
             }
 
         });
