@@ -107,8 +107,7 @@
         <ScrollView
             android:id="@+id/ScrollViewCalender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:visibility="invisible">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -119,7 +118,8 @@
                     android:id="@+id/button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:text="Button"
+                    android:visibility="invisible" />
             </LinearLayout>
         </ScrollView>
 

@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class Home extends AppCompatActivity {
     private ListView listView;
     private String user;
     private TextView textViewUser;
+    private Spinner spinnerManegment;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,9 @@ public class Home extends AppCompatActivity {
         calenderBtn = findViewById(R.id.imageButtonCalendar);
         textViewUser=(TextView) findViewById(R.id.textViewUser);
         textViewUser.setText(user);
+        spinnerManegment=(Spinner) findViewById(R.id.spinnerManegment);
+        if(user.equals("Manegment"))
+            spinnerManegment.setVisibility(View.VISIBLE);
         calenderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
