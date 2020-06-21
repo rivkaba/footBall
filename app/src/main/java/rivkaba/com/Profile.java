@@ -36,8 +36,10 @@ public class Profile extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(name.getText().toString().equals(""))
+                if(name.getText().toString().equals("")) {
                     texMustName.setVisibility(View.VISIBLE);
+                    //name.setOutlineSpotShadowColor(getResources().getColor(R.color.colorPrimaryDark));
+                }
                 else
                 if(texMustName.getVisibility()== View.VISIBLE &&!name.getText().toString().equals(""))
                     texMustName.setVisibility(View.INVISIBLE);
@@ -46,6 +48,16 @@ public class Profile extends AppCompatActivity {
                 else
                 if(texMustEmail.getVisibility()== View.VISIBLE &&!email.getText().toString().equals(""))
                     texMustEmail.setVisibility(View.INVISIBLE);
+                if(userName.getText().toString().equals(""))
+                    texMustUserName.setVisibility(View.VISIBLE);
+                else
+                if(texMustUserName.getVisibility()== View.VISIBLE &&!userName.getText().toString().equals(""))
+                    texMustUserName.setVisibility(View.INVISIBLE);
+                if(passWord.getText().toString().equals(""))
+                    texMustPassWord.setVisibility(View.VISIBLE);
+                else
+                if(texMustPassWord.getVisibility()== View.VISIBLE &&!passWord.getText().toString().equals(""))
+                    texMustPassWord.setVisibility(View.INVISIBLE);
 
             }
 
