@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -97,7 +96,7 @@ public class Home extends AppCompatActivity {
     }
     private void exitApp() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setTitle("Exit Score Table");
+        alertDialog.setTitle("Exit ");
         alertDialog.setMessage("Do you want to exit ?");
         alertDialog.setCancelable(false);
         alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
