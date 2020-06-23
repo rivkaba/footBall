@@ -18,7 +18,7 @@ private ScrollView calender;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
         showCalender=(RadioButton) findViewById(R.id.radioButtonShowCalender);
-        calender=(ScrollView) findViewById(R.id.ScrollViewCalender);
+      //  calender=(ScrollView) findViewById(R.id.ScrollViewCalender);
       //  showCalender.setOnClickListener(View.OnClickListener
        // );
 
