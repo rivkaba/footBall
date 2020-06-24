@@ -23,6 +23,7 @@ public class Home extends AppCompatActivity {
     private ListView listView;
     private String user;
     private TextView textViewUser;
+    private TextView textViewCale;
     private Spinner spinnerManegment;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class Home extends AppCompatActivity {
         calenderBtn = findViewById(R.id.imageButtonCalendar);
         textViewUser=(TextView) findViewById(R.id.textViewUser);
         textViewUser.setText(user);
+        textViewCale=(TextView) findViewById(R.id.textViewCale);
+        textViewCale.setText("CALENDER");
         spinnerManegment=(Spinner) findViewById(R.id.spinnerManegment);
         if(user.equals("Manegment"))
             spinnerManegment.setVisibility(View.VISIBLE);
