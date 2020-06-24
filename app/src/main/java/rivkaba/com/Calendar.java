@@ -12,7 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.ScrollView;
 
 public class Calendar extends AppCompatActivity {
-
+    private String user;
     private RadioButton showCalender;
     private ScrollView calender;
     private Button su;
@@ -27,6 +27,7 @@ public class Calendar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+        user=getIntent().getExtras().getString("user");
         showCalender = (RadioButton) findViewById(R.id.radioButtonShowCalender);
         calender = (ScrollView) findViewById(R.id.ScrollViewCalender);
         su = (Button) findViewById(R.id.btnSu);
@@ -48,8 +49,31 @@ public class Calendar extends AppCompatActivity {
         sa.setOnClickListener(new Listener());
     }
     private class Listener implements View.OnClickListener {
-        @Override public void onClick(View v) {
+        @Override
+        public void onClick(View v) {
             Intent i=new Intent(Calendar.this,Home.class);
+            if(v.getId()==R.id.btnSu)
+                i.putExtra("day","su");
+            else
+            if(v.getId()==R.id.btnMo)
+                i.putExtra("day","mo");
+            else
+            if(v.getId()==R.id.btnTu)
+                i.putExtra("day","tu");
+            else
+            if(v.getId()==R.id.btnW)
+                i.putExtra("day","w");
+            else
+            if(v.getId()==R.id.btnTh)
+                i.putExtra("day","th");
+            else
+            if(v.getId()==R.id.btnFr)
+                i.putExtra("day","fr");
+            else
+            if(v.getId() == R.id.btnSa)
+                i.putExtra("day","sa");
+            i.putExtra("user",user);
+
             startActivity(i);
         }
         }

@@ -25,11 +25,12 @@ public class Home extends AppCompatActivity {
     private TextView textViewUser;
     private TextView textViewCale;
     private Spinner spinnerManegment;
+    private String calender;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        user=getIntent().getExtras().getString("user");
         setContentView(R.layout.activity_home);
+        user=getIntent().getExtras().getString("user");
         listView = findViewById(R.id.vidieoList);
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.filterBtn);
@@ -37,7 +38,10 @@ public class Home extends AppCompatActivity {
         textViewUser=(TextView) findViewById(R.id.textViewUser);
         textViewUser.setText(user);
         textViewCale=(TextView) findViewById(R.id.textViewCale);
-        textViewCale.setText("CALENDER");
+        if(getIntent().getExtras().getString("day")!=null) {
+            calender =  getIntent().getExtras().getString("day");
+            textViewCale.setText(calender);
+        }
         spinnerManegment=(Spinner) findViewById(R.id.spinnerManegment);
         if(user.equals("Manegment"))
             spinnerManegment.setVisibility(View.VISIBLE);
