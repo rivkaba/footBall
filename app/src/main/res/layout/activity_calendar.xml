@@ -29,39 +29,35 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/btnSu"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
-
                     android:background="@android:drawable/gallery_thumb"
-                    android:text="Sa"
+                    android:text="Su"
                     android:textColor="@color/colorPrimary"
                     android:textColorHint="@color/colorPrimary" />
 
                 <Button
-                    android:id="@+id/button10"
+                    android:id="@+id/btnMo"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
-
                     android:text="Mo"
                     android:textColor="@color/colorPrimary" />
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/btnTu"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
-
                     android:text="Tu"
                     android:textColor="@color/colorPrimary" />
 
                 <Button
-                    android:id="@+id/button12"
+                    android:id="@+id/btnW"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
-
                     android:text="W"
                     android:textColor="@color/colorPrimary" />
             </TableRow>
@@ -71,7 +67,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button13"
+                    android:id="@+id/btnTh"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
@@ -79,7 +75,7 @@
                     android:textColor="@color/colorPrimary" />
 
                 <Button
-                    android:id="@+id/button14"
+                    android:id="@+id/btnFr"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
@@ -87,11 +83,10 @@
                     android:textColor="@color/colorPrimary" />
 
                 <Button
-                    android:id="@+id/button15"
+                    android:id="@+id/btnSa"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
-
                     android:text="Sa"
                     android:textColor="@color/colorPrimary" />
             </TableRow>
