@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -32,6 +33,7 @@ public class Home extends AppCompatActivity {
     private String calender;
     private Button btnCheckTheHoers;
     private LinearLayout hour;
+    private CheckBox moveUser;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,14 +48,30 @@ public class Home extends AppCompatActivity {
         textViewCale=(TextView) findViewById(R.id.textViewCale);
         btnCheckTheHoers=(Button)findViewById(R.id.btnCheckTheHoers);
         hour=(LinearLayout) findViewById(R.id.hour);
+        moveUser=(CheckBox)findViewById(R.id.checkBoxMoveUser);
         if(getIntent().getExtras().getString("day")!=null) {
             calender =  getIntent().getExtras().getString("day");
             textViewCale.setText(calender);
             hour.setVisibility(View.VISIBLE);
         }
         spinnerManegment=(Spinner) findViewById(R.id.spinnerManegment);
-        if(user.equals("Manegment"))
+        if(user.equals("Manegment")) {
             spinnerManegment.setVisibility(View.VISIBLE);
+            moveUser.setVisibility(View.VISIBLE);
+        }
+        moveUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user="user";
+                if(moveUser.isChecked()==true) {
+                    Intent intent = new Intent(Home.this, Home.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+                }
+
+
+            }
+        });
         calenderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
