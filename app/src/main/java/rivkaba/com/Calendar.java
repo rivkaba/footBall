@@ -22,7 +22,7 @@ public class Calendar extends AppCompatActivity {
     private Button th;
     private Button fr;
     private Button sa;
-
+    //<color name="colorPrimaryDark">#7DB092</color>  <color name="colorBackground">#CEF1C0</color>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

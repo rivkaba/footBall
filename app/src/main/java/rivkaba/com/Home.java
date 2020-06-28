@@ -9,11 +9,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class Home extends AppCompatActivity {
 
@@ -26,6 +30,8 @@ public class Home extends AppCompatActivity {
     private TextView textViewCale;
     private Spinner spinnerManegment;
     private String calender;
+    private Button btnCheckTheHoers;
+    private LinearLayout hour;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +44,12 @@ public class Home extends AppCompatActivity {
         textViewUser=(TextView) findViewById(R.id.textViewUser);
         textViewUser.setText(user);
         textViewCale=(TextView) findViewById(R.id.textViewCale);
+        btnCheckTheHoers=(Button)findViewById(R.id.btnCheckTheHoers);
+        hour=(LinearLayout) findViewById(R.id.hour);
         if(getIntent().getExtras().getString("day")!=null) {
             calender =  getIntent().getExtras().getString("day");
             textViewCale.setText(calender);
+            hour.setVisibility(View.VISIBLE);
         }
         spinnerManegment=(Spinner) findViewById(R.id.spinnerManegment);
         if(user.equals("Manegment"))
@@ -64,6 +73,15 @@ public class Home extends AppCompatActivity {
             }
         });
         profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(Home.this, Profile.class);
+                startActivity(intent);
+            }
+        });
+        btnCheckTheHoers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

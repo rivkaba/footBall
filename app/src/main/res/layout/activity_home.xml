@@ -59,27 +59,47 @@
         <ListView
             android:id="@+id/vidieoList"
             android:layout_width="wrap_content"
-            android:layout_height="350dp"
-            android:background="@color/colorBackground" />
+            android:layout_height="330dp"
+            android:background="@color/colorBackground">
 
+        </ListView>
+
+
+        <LinearLayout
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"></LinearLayout>
+
+            <Button
+                android:id="@+id/btnCheckTheHoers"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/refs"
+                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTintMode="multiply"
+                android:text="Check the hoers"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@drawable/home" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -91,8 +111,7 @@
                     android:id="@+id/saveBtn"
                     android:layout_width="60dp"
                     android:layout_height="55dp"
-                    android:background="@drawable/save"
-                />
+                    android:background="@drawable/save" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -123,6 +142,7 @@
                     android:layout_weight="1"
                     android:text="profile" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,7 +154,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:background="@drawable/calender"/>
+                    android:background="@drawable/calender" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -143,6 +163,11 @@
                     android:layout_weight="1"
                     android:text="calendar" />
             </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
         </LinearLayout>
 
     </LinearLayout>
