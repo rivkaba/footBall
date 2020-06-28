@@ -1,9 +1,14 @@
 package rivkaba.com;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,5 +80,81 @@ public class Profile extends AppCompatActivity {
             }
 
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        MenuItem privateState = menu.add("Call to manegment");
+        MenuItem exitMenu = menu.add("Exit");
+
+        privateState.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                CallToManegment();
+                return false;
+            }
+        });
+
+        exitMenu.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                exitApp();
+                return false;
+            }
+        });
+
+        return true;
+    }
+    private void exitApp() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Exit ");
+        alertDialog.setMessage("Do you want to exit ?");
+        alertDialog.setCancelable(false);
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(Profile.this, "Bye Bye ...", Toast.LENGTH_LONG).show();
+                finish();  // destroy this activity
+                //System.exit(0);
+                //  android.os.Process.killProcess(android.os.Process.myPid());
+                moveTaskToBack(true);
+
+
+
+            }
+        });
+        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss(); // close the dialog
+            }
+        });
+        alertDialog.show();
+    }
+
+    private void CallToManegment() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Exit ");
+        alertDialog.setMessage("Do you want to Call to manegment ?");
+        alertDialog.setCancelable(false);
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Profile.this, Home.class);
+                startActivity(intent);
+                //  android.os.Process.killProcess(android.os.Process.myPid());
+                //moveTaskToBack(true);
+
+            }
+        });
+        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss(); // close the dialog
+            }
+        });
+        alertDialog.show();
+
     }
 }
