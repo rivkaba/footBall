@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ public class Filter extends AppCompatActivity {
  private TextView textViewTrainingType;
  private String user;
  private TextView textViewUser;
+ private ImageButton calenderBtn;
+ private ImageButton profileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +48,28 @@ public class Filter extends AppCompatActivity {
         trainingType.add((CheckBox) findViewById(R.id.checkBoxShooting));
         trainingType.add((CheckBox) findViewById(R.id.checkBox1on1));
         trainingType.add((CheckBox) findViewById(R.id.checkBoxPassing));
+        profileBtn= findViewById(R.id.profileBtn);
+        calenderBtn = findViewById(R.id.imageButtonCalendar);
 
        // checkBoxAll.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener(new View.O));
+        calenderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Filter.this, Calendar.class);
+                intent.putExtra("user",user);
+                startActivity(intent);
+            }
+        });
 
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(Filter.this, Profile.class);
+                startActivity(intent);
+            }
+        });
         checkBoxAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
