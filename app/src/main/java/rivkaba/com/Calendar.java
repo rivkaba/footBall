@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -22,6 +23,8 @@ public class Calendar extends AppCompatActivity {
     private Button th;
     private Button fr;
     private Button sa;
+    private ImageButton filterBtn;
+    private ImageButton profileBtn;
     //<color name="colorPrimaryDark">#7DB092</color>  <color name="colorBackground">#CEF1C0</color>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,8 @@ public class Calendar extends AppCompatActivity {
         th = (Button) findViewById(R.id.btnTh);
         fr = (Button) findViewById(R.id.btnFr);
         sa = (Button) findViewById(R.id.btnSa);
-
+        profileBtn= findViewById(R.id.profileBtn);
+        filterBtn= findViewById(R.id.imageButtonFilter);
         //  showCalender.setOnClickListener(View.OnClickListener
         // );
        su.setOnClickListener(new Listener());
@@ -47,6 +51,25 @@ public class Calendar extends AppCompatActivity {
         th.setOnClickListener(new Listener());
         fr.setOnClickListener(new Listener());
         sa.setOnClickListener(new Listener());
+        filterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(Calendar.this, Filter.class);
+                intent.putExtra("user",user);
+                startActivity(intent);
+            }
+        });
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(Calendar.this, Profile.class);
+                startActivity(intent);
+            }
+        });
     }
     private class Listener implements View.OnClickListener {
         @Override
