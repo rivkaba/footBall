@@ -25,6 +25,7 @@ public class Filter extends AppCompatActivity {
  private TextView textViewUser;
  private ImageButton calenderBtn;
  private ImageButton profileBtn;
+ private ImageButton saveBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +51,22 @@ public class Filter extends AppCompatActivity {
         trainingType.add((CheckBox) findViewById(R.id.checkBoxPassing));
         profileBtn= findViewById(R.id.profileBtn);
         calenderBtn = findViewById(R.id.imageButtonCalendar);
+        saveBtn = findViewById(R.id.saveBtn);
 
-       // checkBoxAll.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener(new View.O));
+
+        // checkBoxAll.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener(new View.O));
         calenderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Filter.this, Calendar.class);
+                intent.putExtra("user",user);
+                startActivity(intent);
+            }
+        });
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Filter.this, Home.class);
                 intent.putExtra("user",user);
                 startActivity(intent);
             }

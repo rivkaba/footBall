@@ -25,6 +25,7 @@ public class Calendar extends AppCompatActivity {
     private Button sa;
     private ImageButton filterBtn;
     private ImageButton profileBtn;
+    private ImageButton saveBtn;
     //<color name="colorPrimaryDark">#7DB092</color>  <color name="colorBackground">#CEF1C0</color>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,8 @@ public class Calendar extends AppCompatActivity {
         sa = (Button) findViewById(R.id.btnSa);
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.imageButtonFilter);
+        saveBtn= findViewById(R.id.saveBtn);
+
         //  showCalender.setOnClickListener(View.OnClickListener
         // );
        su.setOnClickListener(new Listener());
@@ -57,6 +60,16 @@ public class Calendar extends AppCompatActivity {
 
 
                 Intent intent = new Intent(Calendar.this, Filter.class);
+                intent.putExtra("user",user);
+                startActivity(intent);
+            }
+        });
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(Calendar.this, Home.class);
                 intent.putExtra("user",user);
                 startActivity(intent);
             }
