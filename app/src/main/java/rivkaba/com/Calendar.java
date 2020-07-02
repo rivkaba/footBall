@@ -1,9 +1,13 @@
 package rivkaba.com;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -11,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.TableLayout;
+import android.widget.Toast;
 
 public class Calendar extends AppCompatActivity {
     private String user;
@@ -26,6 +32,7 @@ public class Calendar extends AppCompatActivity {
     private ImageButton filterBtn;
     private ImageButton profileBtn;
     private ImageButton saveBtn;
+    private TableLayout week;
     //<color name="colorPrimaryDark">#7DB092</color>  <color name="colorBackground">#CEF1C0</color>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +51,8 @@ public class Calendar extends AppCompatActivity {
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.imageButtonFilter);
         saveBtn= findViewById(R.id.saveBtn);
-
+        week= findViewById(R.id.tableWeek);
+        week.setVisibility(View.GONE);
         //  showCalender.setOnClickListener(View.OnClickListener
         // );
        su.setOnClickListener(new Listener());
@@ -113,4 +121,65 @@ public class Calendar extends AppCompatActivity {
             startActivity(i);
         }
         }
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        MenuItem Week = menu.add("change to Week");
+        MenuItem manth= menu.add("change to manth");
+        MenuItem exitMenu = menu.add("Exit");
+
+        Week.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                week.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
+        manth.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                week.setVisibility(View.GONE);
+
+                return false;
+            }
+        });
+
+        exitMenu.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                exitApp();
+                return false;
+            }
+        });
+
+        return true;
+    }
+    private void exitApp() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Exit ");
+        alertDialog.setMessage("Do you want to exit ?");
+        alertDialog.setCancelable(false);
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(Calendar.this, "Bye Bye ...", Toast.LENGTH_LONG).show();
+                finish();  // destroy this activity
+                //System.exit(0);
+                //  android.os.Process.killProcess(android.os.Process.myPid());
+                moveTaskToBack(true);
+
+
+
+            }
+        });
+        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss(); // close the dialog
+            }
+        });
+        alertDialog.show();
+    }
+
     }
