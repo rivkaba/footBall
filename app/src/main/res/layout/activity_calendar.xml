@@ -20,6 +20,11 @@
             android:text="press to check day"
             android:textSize="30dp" />
 
+        <CalendarView
+            android:id="@+id/manth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <TableLayout
             android:id="@+id/tableWeek"
             android:layout_width="match_parent"
@@ -31,7 +36,7 @@
 
                 <Button
                     android:id="@+id/btnSu"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Su"
@@ -40,7 +45,7 @@
 
                 <Button
                     android:id="@+id/btnMo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Mo"
@@ -48,7 +53,7 @@
 
                 <Button
                     android:id="@+id/btnTu"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Tu"
@@ -56,20 +61,15 @@
 
                 <Button
                     android:id="@+id/btnW"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="W"
                     android:textColor="@color/colorPrimary" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/btnTh"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Th"
@@ -77,7 +77,7 @@
 
                 <Button
                     android:id="@+id/btnFr"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Fr"
@@ -85,11 +85,52 @@
 
                 <Button
                     android:id="@+id/btnSa"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Sa"
                     android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextViewSu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextViewMo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextViewTu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextViewW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextViewTh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextViewFr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiAutoCompleteTextViewSa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
             </TableRow>
 
         </TableLayout>

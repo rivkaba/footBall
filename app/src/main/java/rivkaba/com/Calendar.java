@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -33,6 +34,7 @@ public class Calendar extends AppCompatActivity {
     private ImageButton profileBtn;
     private ImageButton saveBtn;
     private TableLayout week;
+    private CalendarView manthV;
     //<color name="colorPrimaryDark">#7DB092</color>  <color name="colorBackground">#CEF1C0</color>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +54,10 @@ public class Calendar extends AppCompatActivity {
         filterBtn= findViewById(R.id.imageButtonFilter);
         saveBtn= findViewById(R.id.saveBtn);
         week= findViewById(R.id.tableWeek);
-        week.setVisibility(View.GONE);
-        //  showCalender.setOnClickListener(View.OnClickListener
+        manthV=findViewById(R.id.manth);
+        manthV.setVisibility(View.GONE);
+        //  showCalender.setOnClickListener(Vi
+        //  ew.OnClickListener
         // );
        su.setOnClickListener(new Listener());
         mo.setOnClickListener(new Listener());
@@ -132,7 +136,9 @@ public class Calendar extends AppCompatActivity {
         Week.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
+                manthV.setVisibility(View.GONE);
                 week.setVisibility(View.VISIBLE);
+
                 return false;
             }
         });
@@ -140,7 +146,7 @@ public class Calendar extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 week.setVisibility(View.GONE);
-
+                manthV.setVisibility(View.VISIBLE);
                 return false;
             }
         });
