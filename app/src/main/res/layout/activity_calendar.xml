@@ -96,41 +96,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/multiAutoCompleteTextViewSu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/multiAutoCompleteTextViewMo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/multiAutoCompleteTextViewTu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/multiAutoCompleteTextViewW"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/editText8"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/multiAutoCompleteTextViewTh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/editText9"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/multiAutoCompleteTextViewFr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/editText10"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/multiAutoCompleteTextViewSa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                <EditText
+                    android:id="@+id/editText11"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
             </TableRow>
 
         </TableLayout>
@@ -149,21 +169,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button"
-                    android:visibility="invisible" />
-            </LinearLayout>
+                android:orientation="vertical"/>
         </ScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:orientation="horizontal"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
