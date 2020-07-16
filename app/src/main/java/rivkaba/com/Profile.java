@@ -75,8 +75,11 @@ public class Profile extends AppCompatActivity {
                 else
                 if(texMustPassWord.getVisibility()== View.VISIBLE &&!passWord.getText().toString().equals(""))
                     texMustPassWord.setVisibility(View.GONE);
-                if(!name.getText().toString().equals("")&&!email.getText().toString().equals("")&&!userName.getText().toString().equals("")&&!passWord.getText().toString().equals(""))
-                    Toast.makeText(context,"תודה", Toast.LENGTH_LONG).show();
+                if(!name.getText().toString().equals("")&&!email.getText().toString().equals("")&&!userName.getText().toString().equals("")&&!passWord.getText().toString().equals("")) {
+                    Toast.makeText(context, "תודה", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(Profile.this, Video.class);
+                    startActivity(intent);
+                }
             }
 
         });
