@@ -14,10 +14,10 @@ public class Video extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
         VideoView=(VideoView) findViewById(R.id.videoView1);
-      //  MediaStore.Video.Media mm= MediaStore.Video.Media (this,R.raw.video);
+      // MediaStore mm= new MediaStore(this, R.raw.video);
      //   mm.start();
       //  VideoView="https://www.youtube.com/watch?v=2AWLqffzR9k";
-        MediaPlayer m=MediaPlayer.create(this,R.raw.song1);
+        MediaPlayer m=MediaPlayer.create(this, R.raw.song1);
         m.start();
     }
 }

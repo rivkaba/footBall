@@ -36,7 +36,7 @@
 
                 <Button
                     android:id="@+id/btnSu"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Su"
@@ -45,7 +45,7 @@
 
                 <Button
                     android:id="@+id/btnMo"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Mo"
@@ -53,7 +53,7 @@
 
                 <Button
                     android:id="@+id/btnTu"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Tu"
@@ -61,7 +61,7 @@
 
                 <Button
                     android:id="@+id/btnW"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="W"
@@ -69,7 +69,7 @@
 
                 <Button
                     android:id="@+id/btnTh"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Th"
@@ -77,7 +77,7 @@
 
                 <Button
                     android:id="@+id/btnFr"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="80dp"
                     android:background="@android:drawable/gallery_thumb"
                     android:text="Fr"
@@ -107,7 +107,7 @@
 
                         <EditText
                             android:id="@+id/editText5"
-                            android:layout_width="60dp"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="start|top"
@@ -126,7 +126,7 @@
 
                         <EditText
                             android:id="@+id/editText6"
-                            android:layout_width="60dp"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="start|top"
@@ -145,7 +145,7 @@
 
                         <EditText
                             android:id="@+id/editText7"
-                            android:layout_width="60dp"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="start|top"
@@ -164,7 +164,7 @@
 
                         <EditText
                             android:id="@+id/editText8"
-                            android:layout_width="60dp"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="start|top"
@@ -183,7 +183,7 @@
 
                         <EditText
                             android:id="@+id/editText9"
-                            android:layout_width="60dp"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="start|top"
@@ -202,7 +202,7 @@
 
                         <EditText
                             android:id="@+id/editText10"
-                            android:layout_width="60dp"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="start|top"
@@ -222,7 +222,7 @@
 
                         <EditText
                             android:id="@+id/editText11"
-                            android:layout_width="wrap_content"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="start|top"
