@@ -15,6 +15,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import static android.widget.Toast.*;
 
 public class Login extends AppCompatActivity {
@@ -75,10 +78,13 @@ public class Login extends AppCompatActivity {
                if(texMustPassWord.getVisibility()== View.VISIBLE &&!edtPassWord.getText().toString().equals(""))
                    texMustPassWord.setVisibility(View.INVISIBLE);
                if(!edtName.getText().toString().equals("")&&!edtPassWord.getText().toString().equals("")) {
-                        String myName = edtName.getText().toString();
-                        SharedPreferences.Editor editorName = getSharedPreferences("name", MODE_PRIVATE).edit();
-                        editorName.putString("name_key", myName);
-                        editorName.apply();
+                       // String myName = edtName.getText().toString();
+                       // SharedPreferences.Editor editorName = getSharedPreferences("name", MODE_PRIVATE).edit();
+                       // editorName.putString("name_key", myName);
+                      //  editorName.apply();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("message");
+                        myRef.setValue("Hello, World!");
                         Intent intent = new Intent(Login.this, Home.class);
                         intent.putExtra("user",switchU.getText());
                         startActivity(intent);

@@ -8,12 +8,12 @@ import android.provider.MediaStore;
 import android.widget.VideoView;
 
 public class Video extends AppCompatActivity {
- private VideoView VideoView;
+ //private VideoView VideoView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        VideoView=(VideoView) findViewById(R.id.videoView1);
+       // VideoView=(VideoView) findViewById(R.id.videoView1);
       // MediaStore mm= new MediaStore(this, R.raw.video);
      //   mm.start();
       //  VideoView="https://www.youtube.com/watch?v=2AWLqffzR9k";
