@@ -14,6 +14,8 @@ public class Day {
         //להכניס לפי הסדר
         hours.add(h);
     }
+//    toMap
+//    clone
     protected void deliteHour(Hour h)
     {
         Hour h1;

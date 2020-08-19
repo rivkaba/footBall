@@ -9,11 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Video"></activity>
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".Videoo" />
-        <activity android:name=".M" />
-        <activity android:name=".mmm" />
         <activity android:name=".Day" />
         <activity android:name=".Profile" />
         <activity android:name=".Filter" />

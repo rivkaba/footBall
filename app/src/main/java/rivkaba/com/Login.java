@@ -15,8 +15,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import static android.widget.Toast.*;
 
@@ -82,9 +80,7 @@ public class Login extends AppCompatActivity {
                        // SharedPreferences.Editor editorName = getSharedPreferences("name", MODE_PRIVATE).edit();
                        // editorName.putString("name_key", myName);
                       //  editorName.apply();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("message");
-                        myRef.setValue("Hello, World!");
+
                         Intent intent = new Intent(Login.this, Home.class);
                         intent.putExtra("user",switchU.getText());
                         startActivity(intent);

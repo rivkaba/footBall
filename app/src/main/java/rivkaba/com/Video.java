@@ -7,17 +7,23 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.VideoView;
 
-public class Video extends AppCompatActivity {
- //private VideoView VideoView;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
-       // VideoView=(VideoView) findViewById(R.id.videoView1);
-      // MediaStore mm= new MediaStore(this, R.raw.video);
-     //   mm.start();
-      //  VideoView="https://www.youtube.com/watch?v=2AWLqffzR9k";
-        MediaPlayer m=MediaPlayer.create(this, R.raw.song1);
-        m.start();
+import java.util.HashMap;
+import java.util.Map;
+
+public class Video {
+    private  int start;
+
+    public Video(int start) {
+        this.start = start;
+    }
+
+    public void clone(Map<String, Object> data){
+        this.start = (int) data.get("start");
+
+    }
+    public HashMap<String, Object> toMap(){
+        HashMap<String, Object> fm = new HashMap();
+        fm.put("start", this.start);
+        return fm;
     }
 }
