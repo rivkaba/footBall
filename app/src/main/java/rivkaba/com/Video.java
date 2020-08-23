@@ -13,6 +13,7 @@ import java.util.Map;
 public class Video {
     private  int start;
 
+
     public Video(int start) {
         this.start = start;
     }
