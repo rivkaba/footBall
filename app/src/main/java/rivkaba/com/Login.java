@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 
 import static android.widget.Toast.*;
@@ -81,9 +82,11 @@ public class Login extends AppCompatActivity {
                        // editorName.putString("name_key", myName);
                       //  editorName.apply();
 
-                        Intent intent = new Intent(Login.this, Home.class);
-                        intent.putExtra("user",switchU.getText());
-                        startActivity(intent);
+                        /*    Intent intent = new Intent(Login.this, Home.class);
+                            intent.putExtra("user",switchU.getText());
+                            startActivity(intent);*/
+                   Intent intent = new Intent(Login.this, Video_View.class);
+                   startActivity(intent);
                    }
         }
 
