@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Video">
+    android:background="@color/colorBackground"
+    tools:context=".UploadVideo">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,22 +31,16 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
                     <VideoView
                         android:id="@+id/videoView3"
                         android:layout_width="45dp"
                         android:layout_height="200dp"
                         android:layout_weight="1" />
 
-                    <ImageButton
-                        android:id="@+id/imageButton4"
+                    <Space
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/ic_media_play" />
+                        android:layout_weight="1" />
 
                     <VideoView
                         android:id="@+id/videoView2"
@@ -57,7 +52,30 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:background="@color/colorPrimary">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@color/colorBackground"
+                        ></LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/ply"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_media_play" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
 
                     <ImageButton
                         android:id="@+id/imageButton2"

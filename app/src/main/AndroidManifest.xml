@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CloudStorage"></activity>
+        <activity android:name=".Video_View"></activity>
+        <activity android:name=".CloudStorage" />
         <activity android:name=".UploadVideo" />
         <activity android:name=".Day" />
         <activity android:name=".Profile" />
