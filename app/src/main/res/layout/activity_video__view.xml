@@ -17,7 +17,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -44,7 +44,8 @@
                         <VideoView
                             android:id="@+id/videoView2"
                             android:layout_width="300dp"
-                            android:layout_height="500dp" />
+                            android:layout_height="500dp"
+                            />
 
                     </LinearLayout>
 
@@ -52,15 +53,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:background="@color/colorPrimary">
-
-                        <LinearLayout
-                            android:layout_width="120dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:background="@color/colorBackground"
-                            ></LinearLayout>
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal">
 
                         <ImageButton
                             android:id="@+id/ply"
@@ -68,13 +62,18 @@
                             android:layout_height="wrap_content"
                             android:src="@android:drawable/ic_media_play" />
 
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorBackground"
+                            android:orientation="horizontal"></LinearLayout>
+
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
 
                         <ImageButton
                             android:id="@+id/imageButton2"
