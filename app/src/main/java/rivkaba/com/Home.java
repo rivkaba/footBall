@@ -32,7 +32,7 @@ public class Home extends AppCompatActivity {
     private ImageButton calenderBtn;
     private ImageButton filterBtn;
     private ImageButton profileBtn;
-    private ListView listView;
+    private ListView vidieoList;
     private String user;
     private TextView textViewUser;
     private TextView textViewCale;
@@ -42,11 +42,12 @@ public class Home extends AppCompatActivity {
     private LinearLayout hour;
     private CheckBox moveUser;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         user=getIntent().getExtras().getString("user");
-        listView = findViewById(R.id.vidieoList);
+        vidieoList = findViewById(R.id.vidieoList);
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.filterBtn);
         calenderBtn = findViewById(R.id.imageButtonCalendar);
@@ -56,6 +57,8 @@ public class Home extends AppCompatActivity {
         btnCheckTheHoers=(Button)findViewById(R.id.btnCheckTheHoers);
         hour=(LinearLayout) findViewById(R.id.hour);
         moveUser=(CheckBox)findViewById(R.id.checkBoxMoveUser);
+       // for(int i=0; i<)
+      //  vidieoList
         if(getIntent().getExtras().getString("day")!=null) {
             calender =  getIntent().getExtras().getString("day");
             textViewCale.setText(calender);
