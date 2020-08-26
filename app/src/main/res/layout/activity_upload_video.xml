@@ -49,7 +49,7 @@
                 android:background="@drawable/refs"
                 android:backgroundTint="@color/colorPrimary"
                 android:backgroundTintMode="multiply"
-                android:onClick="record"
+
                 android:text="Record"
                 android:textColor="#FFFFFF" />
 
@@ -65,7 +65,7 @@
                 android:background="@drawable/refs"
                 android:backgroundTint="@color/colorPrimary"
                 android:backgroundTintMode="multiply"
-                android:onClick="upload"
+
                 android:text="Upload"
                 android:textColor="#FFFFFF" />
 
@@ -81,7 +81,7 @@
                 android:background="@drawable/refs"
                 android:backgroundTint="@color/colorPrimary"
                 android:backgroundTintMode="multiply"
-                android:onClick="download"
+
                 android:text="Download"
                 android:textColor="#FFFFFF"
                 />
