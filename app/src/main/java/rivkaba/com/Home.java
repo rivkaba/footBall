@@ -119,7 +119,7 @@ public class Home extends AppCompatActivity {
             }
         });
         firebaseFirestore = FirebaseFirestore.getInstance();
-        Video video = new Video(2);
+        Video video = new Video("2","1 on 1",2.5);
         writeToDB(video);
     }
     public void writeToDB(Video video){
