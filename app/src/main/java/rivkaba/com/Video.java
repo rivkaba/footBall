@@ -11,20 +11,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Video {
-    private  int start;
+    private  String name;
+    private  String type;
+    private  double duration;
 
 
-    public Video(int start) {
-        this.start = start;
+
+
+    public Video(String name, String type, double duration) {
+        this.name=name;
+        this.type=type;
+        this.duration=duration;
     }
 
     public void clone(Map<String, Object> data){
-        this.start = (int) data.get("start");
+        this.name = (String) data.get("name");
+        this.type = (String) data.get("type");
+        this.duration = (double) data.get("duration");
+
 
     }
     public HashMap<String, Object> toMap(){
         HashMap<String, Object> fm = new HashMap();
-        fm.put("start", this.start);
+        fm.put("name", this.name);
+        fm.put("type", this.type);
+        fm.put("duration", this.duration);
+
+
         return fm;
     }
 }
