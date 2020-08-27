@@ -67,6 +67,14 @@
                             android:layout_height="wrap_content"
                             android:src="@android:drawable/ic_media_play" />
 
+                        <EditText
+                            android:id="@+id/duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="time"
+                            android:text="00:00" />
+
                     </LinearLayout>
 
                     <LinearLayout
