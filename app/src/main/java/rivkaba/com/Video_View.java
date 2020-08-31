@@ -48,7 +48,7 @@ public class Video_View extends AppCompatActivity {
         videoView.start();
         isPlaying = true;
         play.setImageResource(R.mipmap.pause_action);
-      //  new  VideoProgress.execute();
+        new  VideoProgress().execute();
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,12 +87,12 @@ public class Video_View extends AppCompatActivity {
             super.onProgressUpdate(values);
             try {
                 int currentPercent = values[0] * 100 / duration;
-                currentProgress.setProgress((values[0]));
+                currentProgress.setProgress(currentPercent);
                 String currentString = String.format("%02d:%02d", values[0] / 60, values[0] % 60);
                  currentTimer.setText(currentString);
             }catch (Exception e){
             }
-            currentProgress.setProgress(values[0]);
+
         }
 
     }
