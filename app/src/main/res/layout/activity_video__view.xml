@@ -76,10 +76,11 @@
                             android:text="00:00"
                             android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
 
-                        <LinearLayout
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"></LinearLayout>
+                        <ProgressBar
+                            android:id="@+id/progressBarV"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="120dp"
+                            android:layout_height="50dp" />
 
                         <EditText
                             android:id="@+id/duration"

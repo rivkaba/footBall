@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -19,6 +20,7 @@ public class Video_View extends AppCompatActivity {
     private ImageButton play;
     private Uri videoUri;
     private boolean isPlaying = false;
+    private ProgressBar currentProgress;
     private int current = 0;
     private int duration = 0;
 
@@ -30,6 +32,7 @@ public class Video_View extends AppCompatActivity {
         currentTimer = (TextView) findViewById(R.id.current);
         videoView = (VideoView) findViewById(R.id.videoView2);
         play = (ImageButton) findViewById(R.id.ply);
+        currentProgress=(ProgressBar)findViewById(R.id.progressBarV);
         videoUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/football-b0d61.appspot.com/o/video.mp4?alt=media&token=0b639468-c1b7-4622-b247-1f4816c8396e");
         videoView.setVideoURI(videoUri);
         videoView.requestFocus();
@@ -64,13 +67,15 @@ public class Video_View extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            do{
-                current=videoView.getCurrentPosition()/1000;
-                try{
-                    int currentProgress=current*100/duration;
-                }
+            do {
+                current = videoView.getCurrentPosition() / 1000;
+                try {
+                    int currentPercent = current * 100 / duration;
+                    publishProgress();
+                } catch (Exception e) {
 
-            }
+                }
+            }while (currentProgress.getProgress()<=100);
             return null;
         }
     }
