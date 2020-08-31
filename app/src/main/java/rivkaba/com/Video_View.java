@@ -48,14 +48,17 @@ public class Video_View extends AppCompatActivity {
         videoView.start();
         isPlaying = true;
         play.setImageResource(R.mipmap.pause_action);
+      //  new  VideoProgress.execute();
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isPlaying) {
                     videoView.pause();
+                    isPlaying=false;
                     play.setImageResource(R.mipmap.play_action);
                 } else {
                     videoView.start();
+                    isPlaying=true;
                     play.setImageResource(R.mipmap.pause_action);
                 }
             }
@@ -71,13 +74,27 @@ public class Video_View extends AppCompatActivity {
                 current = videoView.getCurrentPosition() / 1000;
                 try {
                     int currentPercent = current * 100 / duration;
-                    publishProgress();
+                    publishProgress(currentPercent);
                 } catch (Exception e) {
 
                 }
             }while (currentProgress.getProgress()<=100);
             return null;
         }
+        @Override
+        protected void  onProgressUpdate(Integer...values)
+        {
+            super.onProgressUpdate(values);
+            try {
+                int currentPercent = values[0] * 100 / duration;
+                currentProgress.setProgress((values[0]));
+                String currentString = String.format("%02d:%02d", values[0] / 60, values[0] % 60);
+                 currentTimer.setText(currentString);
+            }catch (Exception e){
+            }
+            currentProgress.setProgress(values[0]);
+        }
+
     }
 }
 
