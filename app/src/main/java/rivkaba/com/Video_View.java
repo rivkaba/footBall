@@ -33,6 +33,7 @@ public class Video_View extends AppCompatActivity {
         videoView = (VideoView) findViewById(R.id.videoView2);
         play = (ImageButton) findViewById(R.id.ply);
         currentProgress=(ProgressBar)findViewById(R.id.progressBarV);
+        currentProgress.setMax(100);
         videoUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/football-b0d61.appspot.com/o/video.mp4?alt=media&token=0b639468-c1b7-4622-b247-1f4816c8396e");
         videoView.setVideoURI(videoUri);
         videoView.requestFocus();
@@ -45,6 +46,7 @@ public class Video_View extends AppCompatActivity {
             }
 
         });
+
         videoView.start();
         isPlaying = true;
         play.setImageResource(R.mipmap.pause_action);
@@ -66,7 +68,7 @@ public class Video_View extends AppCompatActivity {
 
     }
 
-    @Override
+   @Override
     protected void onStop() {
         super.onStop();
         isPlaying = false;
@@ -77,8 +79,10 @@ public class Video_View extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             do {
-                current = videoView.getCurrentPosition() / 1000;
-                publishProgress(current);
+                if(isPlaying) {
+                    current = videoView.getCurrentPosition() / 1000;
+                    publishProgress(current);
+                }
 
                /* try {
                     int currentPercent = current * 100 / duration;
