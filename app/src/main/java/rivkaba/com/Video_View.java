@@ -66,18 +66,26 @@ public class Video_View extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        isPlaying = false;
+    }
+
     public class VideoProgress extends AsyncTask<Void, Integer, Void> {
 
         @Override
         protected Void doInBackground(Void... voids) {
             do {
                 current = videoView.getCurrentPosition() / 1000;
-                try {
+                publishProgress(current);
+
+               /* try {
                     int currentPercent = current * 100 / duration;
                     publishProgress(currentPercent);
                 } catch (Exception e) {
 
-                }
+                }*/
             }while (currentProgress.getProgress()<=100);
             return null;
         }
