@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Video {
+    String title,url;
     private  String name;
     private  String type;
     private  double duration;
@@ -22,6 +23,14 @@ public class Video {
         this.name=name;
         this.type=type;
         this.duration=duration;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void clone(Map<String, Object> data){

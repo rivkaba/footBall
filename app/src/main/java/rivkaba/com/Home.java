@@ -47,7 +47,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         user=getIntent().getExtras().getString("user");
-        vidieoList = findViewById(R.id.vidieoList);
+
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.filterBtn);
         calenderBtn = findViewById(R.id.imageButtonCalendar);
@@ -125,7 +125,7 @@ public class Home extends AppCompatActivity {
     public void writeToDB(Video video){
         Map<String, Object> map =  video.toMap();
 
-        firebaseFirestore.collection("videos").document()
+        firebaseFirestore.collection("video").document()
                 .set(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

@@ -28,6 +28,7 @@ public class Video_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video__view);
+        isPlaying=false;
         durationTimer = (TextView) findViewById(R.id.duration);
         currentTimer = (TextView) findViewById(R.id.current);
         videoView = (VideoView) findViewById(R.id.videoView2);

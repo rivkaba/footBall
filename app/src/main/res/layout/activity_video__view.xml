@@ -78,9 +78,10 @@
 
                         <ProgressBar
                             android:id="@+id/progressBarV"
-                            style="?android:attr/progressBarStyleHorizontal"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                             android:layout_width="120dp"
-                            android:layout_height="50dp" />
+                            android:layout_height="50dp"
+                            android:background="#596A44" />
 
                         <EditText
                             android:id="@+id/duration"
@@ -110,7 +111,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:visibility="invisible" />
 
                         <ImageButton
                             android:id="@+id/imageButton3"
@@ -124,7 +126,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            tools:visibility="invisible" />
 
                         <ImageView
                             android:id="@+id/imageView"
@@ -137,7 +140,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            tools:visibility="invisible" />
 
                         <ImageView
                             android:id="@+id/imageView3"
@@ -151,7 +155,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            tools:visibility="invisible" />
 
                     </LinearLayout>
 
