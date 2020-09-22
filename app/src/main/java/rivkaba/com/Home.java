@@ -3,6 +3,8 @@ package rivkaba.com;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,6 +25,9 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.database.DatabaseReferennce;
+import com.google.firebase.database.FirebaseDatabse;
+
 
 import java.util.List;
 import java.util.Map;
@@ -41,11 +46,19 @@ public class Home extends AppCompatActivity {
     private Button btnCheckTheHoers;
     private LinearLayout hour;
     private CheckBox moveUser;
+    RecyclerView Mrecyclerview;
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Mrecyclerview=findViewById(R.id.recyeleview_video);
+        Mrecyclerview.setHasFixedSize(true);
+        Mrecyclerview.setLayoutManager(new LinearLayoutManager(this));
+        database=FirebaseDatabase.getInstance();
+        reference=database.getRefernce("video");
         user=getIntent().getExtras().getString("user");
 
         profileBtn= findViewById(R.id.profileBtn);
@@ -121,6 +134,21 @@ public class Home extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         Video video = new Video("2","1 on 1",2.5);
         writeToDB(video);
+    }
+
+    protected void onStart() {
+        super.onStart();
+ FirebaseRecyclerAdapter<Video,ViewHolder>firebaseRecyclerlerAdapter=
+         new FirebaseRecyclerAdapter<Video,ViewHolder>(
+         Video.class,
+        R.layout.row,
+        ViewHolder.class,
+        reference
+                ){
+     protected  void populateViewHolder(ViewHolder viewHolder,Video video,int i){
+         viewHolder.setVideo(getApplication(),Video.getTitle(),Video.getUrl());
+     }
+         };
     }
     public void writeToDB(Video video){
         Map<String, Object> map =  video.toMap();
