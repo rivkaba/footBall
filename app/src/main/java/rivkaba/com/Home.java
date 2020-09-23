@@ -146,7 +146,7 @@ public class Home extends AppCompatActivity {
         reference
                 ){
      protected  void populateViewHolder(ViewHolder viewHolder,Video video,int i){
-         viewHolder.setVideo(getApplication(),Video.getTitle(),Video.getUrl());
+         viewHolder.setVideo(getApplication(),video.getTitle(),video.getUrl());
      }
          };
         Mrecyclerview.setAdapter(firebaseRecyclerlerAdapter);
