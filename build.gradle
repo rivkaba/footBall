@@ -18,11 +18,26 @@ buildscript {
 
 }
 
-allprojects {
+/*allprojects {
     repositories {
         google()
         jcenter()
         
+    }
+
+}*/
+allprojects {
+    repositories {
+        maven { url 'https://google.bintray.com/exoplayer/' }
+        maven { url 'https://dl.bintray.com/android/android-tools' }
+        maven { url 'https://dl.bintray.com/firebase/gradle/' }
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        flatDir {
+            dirs 'libs'
+        }
     }
 
 }

@@ -22,12 +22,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.database.DatabaseReferennce;
-import com.google.firebase.database.FirebaseDatabse;
-
 
 import java.util.List;
 import java.util.Map;
@@ -58,7 +58,7 @@ public class Home extends AppCompatActivity {
         Mrecyclerview.setHasFixedSize(true);
         Mrecyclerview.setLayoutManager(new LinearLayoutManager(this));
         database=FirebaseDatabase.getInstance();
-        reference=database.getRefernce("video");
+        reference=database.getReference("video");
         user=getIntent().getExtras().getString("user");
 
         profileBtn= findViewById(R.id.profileBtn);
@@ -138,7 +138,7 @@ public class Home extends AppCompatActivity {
 
     protected void onStart() {
         super.onStart();
- FirebaseRecyclerAdapter<Video,ViewHolder>firebaseRecyclerlerAdapter=
+ FirebaseRecyclerAdapter<Video,ViewHolder> firebaseRecyclerlerAdapter=
          new FirebaseRecyclerAdapter<Video,ViewHolder>(
          Video.class,
         R.layout.row,
@@ -149,6 +149,7 @@ public class Home extends AppCompatActivity {
          viewHolder.setVideo(getApplication(),Video.getTitle(),Video.getUrl());
      }
          };
+        Mrecyclerview.setAdapter(firebaseRecyclerlerAdapter);
     }
     public void writeToDB(Video video){
         Map<String, Object> map =  video.toMap();
