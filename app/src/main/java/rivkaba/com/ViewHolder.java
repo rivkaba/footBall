@@ -27,7 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ViewHolder extends RecyclerView.ViewHolder {
     View mView;
     SimpleExoPlayer exoPlayer ;
-   // private PlayerView mExoplayerView;
+    //private PlayerView mExoplayerView;
     public ViewHolder(@NonNull View itemView) {
 
         super(itemView);

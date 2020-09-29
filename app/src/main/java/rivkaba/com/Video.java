@@ -1,12 +1,5 @@
 package rivkaba.com;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.widget.VideoView;
-import java.lang.reflect.Member;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,10 +12,11 @@ public class Video {
 
 
 
-    public Video(String name, String type, double duration) {
+    public Video(String name, String type, double duration,String url) {
         this.name=name;
         this.type=type;
         this.duration=duration;
+        this.url=url;
     }
 
     public String getTitle() {
