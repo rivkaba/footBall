@@ -1,11 +1,5 @@
 package rivkaba.com;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +16,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,7 +29,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.List;
 import java.util.Map;
 
 public class Home extends AppCompatActivity {
@@ -132,7 +131,7 @@ public class Home extends AppCompatActivity {
             }
         });
         firebaseFirestore = FirebaseFirestore.getInstance();
-        Video video = new Video("2","1 on 1",2.5);
+        Video video = new Video("2","1 on 1",2.5,   "https://firebasestorage.googleapis.com/v0/b/football-b0d61.appspot.com/o/video.mp4?alt=media&token=0b639468-c1b7-4622-b247-1f4816c8396e");
         writeToDB(video);
     }
 

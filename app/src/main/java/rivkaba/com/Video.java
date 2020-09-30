@@ -37,6 +37,8 @@ public class Video {
         this.name = (String) data.get("name");
         this.type = (String) data.get("type");
         this.duration = (double) data.get("duration");
+        this.url = (String) data.get("url");
+
 
 
     }
@@ -45,6 +47,7 @@ public class Video {
         fm.put("name", this.name);
         fm.put("type", this.type);
         fm.put("duration", this.duration);
+        fm.put("url", this.url);
 
 
         return fm;
