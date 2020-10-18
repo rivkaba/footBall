@@ -22,12 +22,10 @@ import androidx.media2.exoplayer.external.upstream.DefaultBandwidthMeter;
 import androidx.media2.exoplayer.external.upstream.DefaultHttpDataSourceFactory;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.exoplayer2.ui.PlayerView;
-
 public class ViewHolder extends RecyclerView.ViewHolder {
     View mView;
     SimpleExoPlayer exoPlayer ;
-    private PlayerView mExoplayerView;
+   // private PlayerView mExoplayerView;
     public ViewHolder(@NonNull View itemView) {
 
         super(itemView);
@@ -36,17 +34,17 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     @SuppressLint("RestrictedApi")
     public  void  setVideo(final Application ctx, String title, final String url){
         TextView mtextView=mView.findViewById(R.id.Titletv);
-        mExoplayerView=mView.findViewById(R.id.exoplayer_view);
+      //  mExoplayerView=mView.findViewById(R.id.exoplayer_view);
         mtextView.setText(title);
         try {
             BandwidthMeter bandwidthMeter= new DefaultBandwidthMeter.Builder(ctx).build();
-            TrackSelector trackSelector =new DefaultTrackSelector(new AdaptiveTrackSelection().Factory(bandwidthMeter));
+            TrackSelector trackSelector =new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));
             exoPlayer=(SimpleExoPlayer) ExoPlayerFactory.newSimpleInstance(ctx);
             Uri video =Uri.parse(url);
-            DefaultHttpDataSourceFactory dataSourceFactory=new DefaultHttpDataSourceFactory(video);
+            DefaultHttpDataSourceFactory dataSourceFactory=new DefaultHttpDataSourceFactory("video");
             ExtractorsFactory extractorsFactory =new DefaultExtractorsFactory();
             MediaSource mediaSource=new ExtractorMediaSource(video,dataSourceFactory,extractorsFactory, null,null);
-            mExoplayerView.setPlayer(exoPlayer);
+           // mExoplayerView.setPlayer(exoPlayer);
             exoPlayer.prepare(mediaSource);
             exoPlayer.setPlayWhenReady(false);
         }catch (Exception e){
