@@ -1,2 +1,5 @@
 rootProject.name='Football'
 include ':app'
+gradle.ext.exoplayerRoot = 'C:\\Users\\Student\\AndroidStudioProjects\\Football\\ExoPlayer'
+gradle.ext.exoplayerModulePrefix = 'exoplayer-'
+apply from: new File(gradle.ext.exoplayerRoot, 'core_settings.gradle')

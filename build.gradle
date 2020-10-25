@@ -5,6 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+
         
     }
     dependencies {
@@ -31,6 +32,7 @@ allprojects {
         maven { url 'https://google.bintray.com/exoplayer/' }
         maven { url 'https://dl.bintray.com/android/android-tools' }
         maven { url 'https://dl.bintray.com/firebase/gradle/' }
+
         google()
         jcenter()
         mavenCentral()
