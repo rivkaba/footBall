@@ -45,14 +45,14 @@ dependencies {
     //noinspection GradleCompatible
     implementation  'com.android.support:appcompat-v7:28.0.0'
 
-    //noinspection GradleCompatible
+
     implementation 'com.google.android.exoplayer:exoplayer:2.12.1'
  /*   implementation 'com.google.android:exoplayer:r2.12.0'
     implementation 'com.google.android:exoplayer-core:r2.12.0'
     implementation 'com.google.android:exoplayer-dash:r2.12.0'
     implementation 'com.google.android:exoplayer-hls:r2.12.1'
-    implementation 'com.google.android:exoplayer-smoothreaming:r2.12.0'
-    implementation 'com.google.android:exoplayer-exoplayer-ui:r2.12.0'*/
+    implementation 'com.google.android:exoplayer-smoothreaming:2.12.0'
+    implementation 'com.google.android:exoplayer-exoplayer-ui:2.12.0'*/
     implementation 'com.google.firebase:firebase-storage:19.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
    // implementation  'com.google.firebase:firebase-auth:19.2.0'

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="30dp"
     tools:context=".Login"
     android:background="#CEF1C0">
 
@@ -36,16 +39,20 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp">
             <EditText
-                android:id="@+id/editUserName"
+                android:id="@+id/editEmaill"
                 android:layout_width="match_parent"
+               android:paddingLeft="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/refs"
                 android:backgroundTint="#FFFFFF"
@@ -53,40 +60,60 @@
                 android:textColor="@color/colorPrimary"
                 android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary"
-                android:hint="UserName"
+                android:hint="Enter your emaill..."
+                android:inputType="textEmailAddress"
                 android:textSize="25dp"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/email_foreground"
+                  android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
 
             <TextView
-                android:id="@+id/mustFileU"
+                android:id="@+id/mustFileE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="the file is must"
                 android:textColor="@color/colorEror"
                 android:visibility="invisible" />
 
-            <EditText
-                android:id="@+id/editPassWord"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="PassWord"
-                android:inputType="textPassword"
-                android:background="@drawable/refs"
-                android:backgroundTint="#FFFFFF"
-                android:ems="10"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/colorBackground"
-                android:textColorLink="@color/colorPrimary"
-                />
+                android:layout_marginTop="40dp">
 
+                <EditText
+                    android:id="@+id/editPassWord"
+                    style="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/refs"
+                    android:backgroundTint="#FFFFFF"
+                    android:hint="Enter your password..."
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="50dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHighlight="@color/colorBackground"
+                    android:textColorLink="@color/colorPrimary"
+                    android:textSize="25dp" />
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/password_foreground"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/mustFileP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="the file is must"
                 android:textColor="@color/colorEror"
-                android:visibility="invisible"/>
-
+                android:visibility="invisible" />
         </LinearLayout>
 
         <LinearLayout
@@ -106,53 +133,70 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="60dp"
+                android:layout_width="17dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"></LinearLayout>
 
             <Button
-                android:id="@+id/passName"
+                android:id="@+id/signIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/refs"
                 android:backgroundTint="@color/colorPrimary"
                 android:backgroundTintMode="multiply"
-                android:text="Pass Name"
+                android:text="Sign in"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <Button
-                android:id="@+id/forgetn"
-                style="@style/Base.V28.Theme.AppCompat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackground"
-                android:elevation="0dp"
-                android:text="forget user name"
-                android:textColor="@color/colorPrimary" />
+
 
             <Button
                 android:id="@+id/forgrtp"
                 style="@style/Base.V28.Theme.AppCompat"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:elevation="0dp"
+                android:paddingLeft="60dp"
                 android:text="forget passWord"
                 android:textColor="@color/colorPrimary" />
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:gravity="center">
 
+            <TextView
+                android:id="@+id/haventAccount"
+                style="@style/Base.V28.Theme.AppCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="60dp"
+
+                android:background="?attr/selectableItemBackground"
+                android:text="You haven't account?"
+                android:textColor="@color/colorPrimary" />
+               <Button
+                   android:id="@+id/singUp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   style="@style/Base.V28.Theme.AppCompat"
+                   android:paddingTop="12dp"
+                   android:background="?attr/selectableItemBackground"
+                   android:text="Sing up"
+                   android:textColor="@color/colorPrimary"
+                   android:textStyle="bold"/>
+           </LinearLayout>
         </LinearLayout>
 
+
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

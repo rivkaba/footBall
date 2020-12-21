@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -121,6 +121,7 @@
                 android:backgroundTint="#FFFFFF"
                 android:ems="10"
                 android:hint="Email"
+                android:textSize="25dp"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/colorPrimary"
                 android:textColorHighlight="@color/colorPrimary"
@@ -135,44 +136,8 @@
                 android:text="the file is must"
                 android:textColor="#F44336"
                 android:visibility="gone" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:background="@color/colorBackground">
 
-            <TextView
-                android:id="@+id/UserNameL"
-                android:layout_width="30dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:text="User name"
-                android:textColor="@color/colorPrimary"
-                android:textColorLink="@color/colorPrimary" />
 
-            <EditText
-
-                android:id="@+id/UseName"
-                style="@style/Base.TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/refs"
-                android:backgroundTint="#FFFFFF"
-                android:hint="User name"
-                android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/colorBackground"
-                android:textColorLink="@color/colorPrimary"
-                android:textSize="25dp" />
-        </LinearLayout>
-
-            <TextView
-                android:id="@+id/mustFileU"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="the file is must"
-                android:textColor="#F44336"
-                android:visibility="gone" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -202,7 +167,6 @@
                 android:textColorHighlight="@color/colorBackground"
                 android:textColorLink="@color/colorPrimary" />
         </LinearLayout>
-
             <TextView
                 android:id="@+id/mustFileP"
                 android:layout_width="match_parent"
@@ -210,6 +174,45 @@
                 android:text="the file is must"
                 android:textColor="#F44336"
                 android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:background="@color/colorBackground">
+
+                <TextView
+                    android:id="@+id/confirmPassWordL"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:text="Confirm passWord"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorLink="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/confirmPassWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:background="@drawable/refs"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:hint="PassWord"
+                    android:inputType="textPassword"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHighlight="@color/colorBackground"
+                    android:textColorLink="@color/colorPrimary" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/mustFileCP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="the file is must"
+                android:textColor="#F44336"
+                android:visibility="gone" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -240,6 +243,7 @@
                 android:textColorLink="@color/colorPrimary"
                 android:textSize="25dp" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -274,13 +278,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@color/colorBackground">
 
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@color/colorBackground">
@@ -289,28 +293,41 @@
 
             <Button
                 android:id="@+id/Save"
-                android:layout_width="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/refs"
                 android:backgroundTint="@color/colorPrimary"
                 android:backgroundTintMode="multiply"
                 android:text="save"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="50dp"
+            <TextView
+                android:id="@+id/haveAccount"
+                style="@style/Base.V28.Theme.AppCompat"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/colorBackground"></LinearLayout>
+                android:paddingLeft="60dp"
+                android:background="?attr/selectableItemBackground"
+                android:text="You have account?"
+                android:textColor="@color/colorPrimary" />
+            <Button
+                android:id="@+id/singInn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Base.V28.Theme.AppCompat"
+                android:background="?attr/selectableItemBackground"
+                android:text="Sing in"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"/>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@color/colorBackground"
-            android:orientation="vertical"></LinearLayout>
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

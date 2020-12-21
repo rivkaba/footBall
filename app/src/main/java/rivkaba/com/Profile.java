@@ -1,12 +1,10 @@
 package rivkaba.com;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,17 +13,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Profile extends AppCompatActivity {
     private TextView texMustName;
     private TextView texMustEmail;
-    private TextView texMustUserName;
+    private TextView texMustConfirmPassWord;
     private TextView texMustPassWord;
+    private TextView confirmPassWordL;
     private Button save;
     private EditText name;
     private EditText email;
-    private EditText userName;
     private EditText passWord;
+    private EditText confirmPassWord;
     private Context context;
+    private Button singIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +38,14 @@ public class Profile extends AppCompatActivity {
         save = (Button) findViewById(R.id.Save);
         texMustName = (TextView) findViewById(R.id.mustFileN);
         texMustEmail = (TextView) findViewById(R.id.mustFileE);
-        texMustUserName = (TextView) findViewById(R.id.mustFileU);
+        texMustConfirmPassWord = (TextView) findViewById(R.id.mustFileCP);
         texMustPassWord = (TextView) findViewById(R.id.mustFileP);
         name = (EditText) findViewById(R.id.Name);
         email = (EditText) findViewById(R.id.Email);
-        userName = (EditText) findViewById(R.id.UseName);
+        confirmPassWordL=(TextView) findViewById(R.id.confirmPassWordL);
         passWord = (EditText) findViewById(R.id.PassWord);
-
+        singIn = (Button) findViewById(R.id.singInn);
+        confirmPassWord=(EditText) findViewById(R.id.confirmPassWord);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,14 +63,14 @@ public class Profile extends AppCompatActivity {
                 else
                 if(texMustEmail.getVisibility()== View.VISIBLE &&!email.getText().toString().equals(""))
                     texMustEmail.setVisibility(View.GONE);
-                if(userName.getText().toString().equals("")) {
-                    texMustUserName.setVisibility(View.VISIBLE);
-                    userName.setHintTextColor(getResources().getColor(R.color.colorEror));
+                if(confirmPassWord.getText().toString().equals("")) {
+                    texMustConfirmPassWord.setVisibility(View.VISIBLE);
+                    confirmPassWord.setHintTextColor(getResources().getColor(R.color.colorEror));
 
                 }
                 else
-                if(texMustUserName.getVisibility()== View.VISIBLE &&!userName.getText().toString().equals(""))
-                    texMustUserName.setVisibility(View.GONE);
+                if(texMustConfirmPassWord.getVisibility()== View.VISIBLE &&!confirmPassWord.getText().toString().equals(""))
+                    texMustConfirmPassWord.setVisibility(View.GONE);
                 if(passWord.getText().toString().equals("")) {
                     texMustPassWord.setVisibility(View.VISIBLE);
                     passWord.setHintTextColor(getResources().getColor(R.color.colorEror));
@@ -75,11 +79,18 @@ public class Profile extends AppCompatActivity {
                 else
                 if(texMustPassWord.getVisibility()== View.VISIBLE &&!passWord.getText().toString().equals(""))
                     texMustPassWord.setVisibility(View.GONE);
-                if(!name.getText().toString().equals("")&&!email.getText().toString().equals("")&&!userName.getText().toString().equals("")&&!passWord.getText().toString().equals("")) {
-                    Toast.makeText(context, "תודה", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Profile.this, Video.class);
-                    startActivity(intent);
+                if(!name.getText().toString().equals("")&&!email.getText().toString().equals("")&&!confirmPassWordL.getText().toString().equals("")&&!passWord.getText().toString().equals("")) {
+                    Register();
+
                 }
+            }
+
+        });
+        singIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, Login.class);
+                startActivity(intent);
             }
 
         });
@@ -158,6 +169,33 @@ public class Profile extends AppCompatActivity {
             }
         });
         alertDialog.show();
+        singIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, Login.class);
+                startActivity(intent);
+            }
+
+        });
+
+
+    }
+    private void Register(){
+        String emaill=email.getText().toString();
+        String passWordd=passWord.getText().toString();
+        String confirmPassWordd= confirmPassWord.getText().toString();
+        if(!passWordd.equals(confirmPassWordd))
+            confirmPassWord.setError("Different password");
+       else if (passWordd.length()<4)
+            passWord.setError("Length should be >4");
+        else if(!Patterns.EMAIL_ADDRESS.matcher(emaill).matches())
+            email.setError("invalid email");
+
+
+        else  {
+         Toast.makeText(context, "תודה", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(Profile.this, Profile.class);
+        startActivity(intent);}
 
     }
 }

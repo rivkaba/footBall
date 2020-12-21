@@ -5,7 +5,6 @@ import android.app.Application;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.media2.exoplayer.external.ExoPlayerFactory;
@@ -33,9 +32,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     }
     @SuppressLint("RestrictedApi")
     public  void  setVideo(final Application ctx, String title, final String url){
-        TextView mtextView=mView.findViewById(R.id.Titletv);
+      // TextView mtextView=mView.findViewById(R.id.Titletv);
       //  mExoplayerView=mView.findViewById(R.id.exoplayer_view);
-        mtextView.setText(title);
+     //   mtextView.setText(title);
         try {
             BandwidthMeter bandwidthMeter= new DefaultBandwidthMeter.Builder(ctx).build();
             TrackSelector trackSelector =new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));

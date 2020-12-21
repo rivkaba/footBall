@@ -1,12 +1,9 @@
 package rivkaba.com;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.SystemClock;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -14,22 +11,20 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
-
-import static android.widget.Toast.*;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
 
     private Switch switchU;
-    private Button passNameBtn;
-    private EditText edtName;
-    private TextView texMustName;
+    private Button signIn;
+    private EditText editEmaill;
+    private TextView texMustEmail;
     private TextView texMustPassWord;
     private EditText edtPassWord;
-    private Button forgetN;
     private Button forgetP;
     private Context context;
+    private Button singUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +32,13 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         context=this;
         switchU = (Switch) findViewById(R.id.switchUM);
-        passNameBtn = (Button) findViewById(R.id.passName);
-        edtName = (EditText) findViewById(R.id.editUserName);
+        signIn = (Button) findViewById(R.id.signIn);
+        editEmaill = (EditText) findViewById(R.id.editEmaill);
         edtPassWord= (EditText) findViewById(R.id.editPassWord);
         texMustPassWord = (TextView) findViewById(R.id.mustFileP);
-        texMustName = (TextView) findViewById(R.id.mustFileU);
-        forgetN=(Button) findViewById(R.id.forgetn);
+        texMustEmail = (TextView) findViewById(R.id.mustFileE);
+        singUp= (Button) findViewById(R.id.singUp);
+
         forgetP=(Button) findViewById(R.id.forgrtp);
         switchU.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -59,16 +55,16 @@ public class Login extends AppCompatActivity {
 
 
         });
-        passNameBtn.setOnClickListener(new View.OnClickListener() {
+        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtName.getText().toString().equals("")) {
-                    texMustName.setVisibility(View.VISIBLE);
-                    edtName.setHintTextColor(getResources().getColor(R.color.colorEror));
+               if(editEmaill.getText().toString().equals("")) {
+                    texMustEmail.setVisibility(View.VISIBLE);
+                    editEmaill.setHintTextColor(getResources().getColor(R.color.colorEror));
                 }
-                else
-                if(texMustName.getVisibility()== View.VISIBLE &&!edtName.getText().toString().equals(""))
-                    texMustName.setVisibility(View.INVISIBLE);
+                 else
+                if(texMustEmail.getVisibility()== View.VISIBLE &&!editEmaill.getText().toString().equals(""))
+                    texMustEmail.setVisibility(View.INVISIBLE);
                if(edtPassWord.getText().toString().equals("")) {
                    texMustPassWord.setVisibility(View.VISIBLE);
                    edtPassWord.setHintTextColor(getResources().getColor(R.color.colorEror));
@@ -76,27 +72,27 @@ public class Login extends AppCompatActivity {
                else
                if(texMustPassWord.getVisibility()== View.VISIBLE &&!edtPassWord.getText().toString().equals(""))
                    texMustPassWord.setVisibility(View.INVISIBLE);
-               if(!edtName.getText().toString().equals("")&&!edtPassWord.getText().toString().equals("")) {
+                if(!Patterns.EMAIL_ADDRESS.matcher(editEmaill.getText().toString()).matches())
+                    editEmaill.setError("invalid email");
+               else if(!editEmaill.getText().toString().equals("")&&!edtPassWord.getText().toString().equals("")) {
+
+
+
+
+
+
                        // String myName = edtName.getText().toString();
                        // SharedPreferences.Editor editorName = getSharedPreferences("name", MODE_PRIVATE).edit();
                        // editorName.putString("name_key", myName);
                       //  editorName.apply();
 
-                        /*    Intent intent = new Intent(Login.this, Home.class);
-                            intent.putExtra("user",switchU.getText());
-                            startActivity(intent);*/
-                   Intent intent = new Intent(Login.this, Video_View.class);
+                   Intent intent = new Intent(Login.this, Home.class);
+                   intent.putExtra("user",switchU.getText());
                    startActivity(intent);
-                   }
+
+                 }
+
         }
-
-        });
-        forgetN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,"ברצינות????", Toast.LENGTH_LONG).show();
-
-            }
 
         });
 
@@ -107,6 +103,14 @@ public class Login extends AppCompatActivity {
                     }
 
                 });
+        singUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Profile.class);
+                startActivity(intent);
+            }
+
+        });
                     }
             }
 
