@@ -3,7 +3,6 @@ package rivkaba.com;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,20 +15,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.Map;
 
 public class Home extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
@@ -46,7 +39,7 @@ public class Home extends AppCompatActivity {
     private LinearLayout hour;
     private CheckBox moveUser;
     RecyclerView Mrecyclerview;
-    FirebaseDatabase database;
+  // FirebaseDatabase database;
     DatabaseReference reference;
 
 
@@ -56,9 +49,9 @@ public class Home extends AppCompatActivity {
         Mrecyclerview=findViewById(R.id.recyeleview_video);
         Mrecyclerview.setHasFixedSize(true);
         Mrecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        database=FirebaseDatabase.getInstance();
+      /*  database=FirebaseDatabase.getInstance();
         reference=database.getReference("video");
-        user=getIntent().getExtras().getString("user");
+        user=getIntent().getExtras().getString("user");*/
 
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.filterBtn);
@@ -130,9 +123,9 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        firebaseFirestore = FirebaseFirestore.getInstance();
+    /*    firebaseFirestore = FirebaseFirestore.getInstance();
         Video video = new Video("2","1 on 1",2.5);
-        writeToDB(video);
+        writeToDB(video);*/
     }
 
     protected void onStart() {
@@ -150,7 +143,7 @@ public class Home extends AppCompatActivity {
          };
         Mrecyclerview.setAdapter(firebaseRecyclerlerAdapter);
     }
-    public void writeToDB(Video video){
+  /*  public void writeToDB(Video video){
         Map<String, Object> map =  video.toMap();
 
         firebaseFirestore.collection("video").document()
@@ -167,7 +160,7 @@ public class Home extends AppCompatActivity {
                         Log.w("", "Error writing document", e);
                     }
                 });
-    }
+    }*/
 
 
     @Override
