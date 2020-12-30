@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
@@ -85,4 +87,5 @@ dependencies {
     // implementation 'com.google.firebase:firebase-auth:19.3.2'
 
 }
+
 apply plugin: 'com.google.gms.google-services'
