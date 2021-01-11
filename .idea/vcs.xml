@@ -3,7 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ExoPlayer" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/bootstrap" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/football" vcs="Git" />
   </component>
 </project>

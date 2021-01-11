@@ -39,7 +39,10 @@ public class Login extends AppCompatActivity {
         texMustEmail = (TextView) findViewById(R.id.mustFileE);
         singUp= (Button) findViewById(R.id.singUp);
 
+
         forgetP=(Button) findViewById(R.id.forgrtp);
+
+
         switchU.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -112,6 +115,8 @@ public class Login extends AppCompatActivity {
 
         });
                     }
+
+
             }
 
 
