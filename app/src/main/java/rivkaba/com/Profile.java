@@ -23,7 +23,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.core.Tag;
 
 public class Profile extends AppCompatActivity {
     private TextView texMustName;
@@ -210,26 +209,28 @@ public class Profile extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Log.d(Tag, "createUserWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
+                                Log.d("emil", "createUserWithEmail:success");
+                                singIn.callOnClick();
+                             //   FirebaseUser user = mAuth.getCurrentUser();
                                 //updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
+                                Log.w("emil", "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(Profile.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
-                                updateUI(null);
+                                Intent intent = new Intent(Profile.this, Profile.class);
+                                startActivity(intent);
+                               // updateUI(null);
                             }
 
-                            // ...
+
                         }
                     });
         }
-       /*  Toast.makeText(context, "תודה", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(Profile.this, Profile.class);
-        startActivity(intent);}*/
+       // Toast.makeText(context, "תודה", Toast.LENGTH_LONG).show();
 
-    }
+}
+
     @Override
     public void onStart() {
         super.onStart();
