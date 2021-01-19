@@ -43,17 +43,17 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         context=this;
-        save = (Button) findViewById(R.id.Save);
-        texMustName = (TextView) findViewById(R.id.mustFileN);
-        texMustEmail = (TextView) findViewById(R.id.mustFileE);
-        texMustConfirmPassWord = (TextView) findViewById(R.id.mustFileCP);
-        texMustPassWord = (TextView) findViewById(R.id.mustFileP);
-        name = (EditText) findViewById(R.id.Name);
-        email = (EditText) findViewById(R.id.Email);
-        confirmPassWordL=(TextView) findViewById(R.id.confirmPassWordL);
-        passWord = (EditText) findViewById(R.id.PassWord);
-        singIn = (Button) findViewById(R.id.singInn);
-        confirmPassWord=(EditText) findViewById(R.id.confirmPassWord);
+        save =  findViewById(R.id.Save);
+        texMustName =  findViewById(R.id.mustFileN);
+        texMustEmail =  findViewById(R.id.mustFileE);
+        texMustConfirmPassWord =  findViewById(R.id.mustFileCP);
+        texMustPassWord =  findViewById(R.id.mustFileP);
+        name =  findViewById(R.id.Name);
+        email =  findViewById(R.id.Email);
+        confirmPassWordL= findViewById(R.id.confirmPassWordL);
+        passWord =  findViewById(R.id.PassWord);
+        singIn =  findViewById(R.id.singInn);
+        confirmPassWord= findViewById(R.id.confirmPassWord);
         mAuth = FirebaseAuth.getInstance();
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +137,7 @@ public class Profile extends AppCompatActivity {
         alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                FirebaseAuth.getInstance().signOut();
                 Toast.makeText(Profile.this, "Bye Bye ...", Toast.LENGTH_LONG).show();
                 finish();  // destroy this activity
                 //System.exit(0);
