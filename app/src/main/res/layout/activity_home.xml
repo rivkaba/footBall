@@ -111,7 +111,7 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="166dp"
+            android:layout_width="122dp"
             android:layout_height="85dp"
             android:background="@drawable/home_foreground" />
 
@@ -123,7 +123,7 @@
 
             <ImageButton
                 android:id="@+id/saveBtn"
-                android:layout_width="67dp"
+                android:layout_width="88dp"
                 android:layout_height="55dp"
                 android:background="@drawable/love_foreground" />
 
@@ -144,14 +144,14 @@
 
             <ImageButton
                 android:id="@+id/profileBtn"
-                android:layout_width="51dp"
-                android:layout_height="match_parent"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                android:background="@drawable/profile_foreground" />
+                android:background="@drawable/pror" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="profile" />

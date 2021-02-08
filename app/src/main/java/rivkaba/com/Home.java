@@ -45,6 +45,7 @@ public class Home extends AppCompatActivity {
     private Button btnCheckTheHoers;
     private LinearLayout hour;
     private CheckBox moveUser;
+    private ImageButton saveBtn;
     RecyclerView Mrecyclerview;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -60,7 +61,7 @@ public class Home extends AppCompatActivity {
       database= FirebaseDatabase.getInstance();
         reference=database.getReference("video");
         user=getIntent().getExtras().getString("user");
-
+        saveBtn=findViewById(R.id.saveBtn);
         profileBtn= findViewById(R.id.profileBtn);
         filterBtn= findViewById(R.id.filterBtn);
         calenderBtn = findViewById(R.id.imageButtonCalendar);
@@ -99,6 +100,14 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Calendar.class);
+                intent.putExtra("user",user);
+                startActivity(intent);
+            }
+        });
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Home.class);
                 intent.putExtra("user",user);
                 startActivity(intent);
             }

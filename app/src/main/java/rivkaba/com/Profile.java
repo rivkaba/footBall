@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +21,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class Profile extends AppCompatActivity {
     private TextView texMustName;
@@ -43,6 +41,7 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         context=this;
+        mAuth = FirebaseAuth.getInstance();
         save =  findViewById(R.id.Save);
         texMustName =  findViewById(R.id.mustFileN);
         texMustEmail =  findViewById(R.id.mustFileE);
@@ -54,7 +53,7 @@ public class Profile extends AppCompatActivity {
         passWord =  findViewById(R.id.PassWord);
         singIn =  findViewById(R.id.singInn);
         confirmPassWord= findViewById(R.id.confirmPassWord);
-        mAuth = FirebaseAuth.getInstance();
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +87,8 @@ public class Profile extends AppCompatActivity {
                 else
                 if(texMustPassWord.getVisibility()== View.VISIBLE &&!passWord.getText().toString().equals(""))
                     texMustPassWord.setVisibility(View.GONE);
-                if(!name.getText().toString().equals("")&&!email.getText().toString().equals("")&&!confirmPassWordL.getText().toString().equals("")&&!passWord.getText().toString().equals("")) {
+                if(!name.getText().toString().equals("")&&!email.getText().toString().equals("")&&!confirmPassWord.getText().toString().equals("")&&!passWord.getText().toString().equals("")) {
+                    Toast.makeText(Profile.this, name.getText().toString()+email.getText().toString()+passWord.getText().toString()+confirmPassWord.getText().toString(), Toast.LENGTH_LONG).show();
                     Register();
 
                 }
@@ -184,6 +184,7 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Profile.this, Login.class);
                 startActivity(intent);
+                finish();
             }
 
         });
@@ -200,9 +201,6 @@ public class Profile extends AppCompatActivity {
             passWord.setError("Length should be >4");
         else if(!Patterns.EMAIL_ADDRESS.matcher(emaill).matches())
             email.setError("invalid email");
-
-
-
         else  {
             mAuth.createUserWithEmailAndPassword(emaill, passWordd)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -210,15 +208,16 @@ public class Profile extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Log.d("emil", "createUserWithEmail:success");
-                                singIn.callOnClick();
+                                Toast.makeText(Profile.this,"Successfully registered",Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(Profile.this, Login.class);
+                                startActivity(intent);
+                                finish();
                              //   FirebaseUser user = mAuth.getCurrentUser();
                                 //updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Log.w("emil", "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(Profile.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                              //  Log.w("emil", "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(Profile.this, "SignnUp failed.",Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(Profile.this, Profile.class);
                                 startActivity(intent);
                                // updateUI(null);
@@ -232,13 +231,13 @@ public class Profile extends AppCompatActivity {
 
 }
 
-    @Override
-    public void onStart() {
+   /*   @Override
+  public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        singIn.callOnClick();
+       // singIn.callOnClick();?????????????????????????????????????????????????????????????????????????????????????
 
-    }
+    }*/
 
 }

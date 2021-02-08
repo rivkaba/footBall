@@ -9,9 +9,10 @@ buildscript {
 
     }
     dependencies {
-       classpath 'com.android.tools.build:gradle:4.1.1'
+       classpath 'com.android.tools.build:gradle:4.1.2'
         classpath 'com.google.gms:google-services:4.3.4'
        // implementation 'com.android.support:appcompat-v7:28.0.0'
+
    
 
 
@@ -42,6 +43,9 @@ allprojects {
         }
     }
 
+}
+configurations {
+  //  compile.exclude group: 'com.google.zxing'
 }
 
 task clean(type: Delete) {
